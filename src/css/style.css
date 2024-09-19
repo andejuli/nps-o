@@ -116,6 +116,12 @@ a:hover {
   color: var(--bs-link-hover-color);
 }
 
+/* Added so disclaimer link wasn't white and looks like a link */
+.disclaimer a {
+  color: var(--bs-chathams-blue);
+  text-decoration: underline;
+}
+
 /* Skip links styling */
 .skip-links ul {
   list-style-type: none;
@@ -167,9 +173,15 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
+.global-header h1 {
+  font-size: 1.2em;
+}
 .global-header__right {
   align-self: center;
 }
+.global-header>a {
+  padding-left: 5px;
+} 
 
 /* Added the following for icon size */
 svg {
@@ -181,13 +193,44 @@ svg {
 #global-nav-toggle {
   background-color: var(--bs-black);
   color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid var(--bs-grey-5);
+  padding: 20px;
+}
+
+/* Added to move search icon over and make a bit bigger */
+.search-icon .icon {
+  padding-right: 5px;
+  width: 50px;
+}
+
+.global-header__right {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Added to show states as white */
+.states, #park_des {
+  color: var(--bs-white);
+  font-size: 1rem;
+}
+
+.park-nav {
+  padding-bottom: 8px;
 }
 
 /* Added to align items in bottom of header */
 .park-nav ul{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 75%;
+  margin: 10px auto;
+
 }
+
 
 .park-nav a {
   display: flex;
@@ -195,20 +238,36 @@ svg {
   align-items: center;
 }
 
-/* Added to have states be white */
-.hero-banner__subtitle {
-  color: white;
+/* Added to get the banner content over the image */
+.hero-banner {
+  position: relative;
 }
 
-/* Added to align park name and states */
+
+
+/* Added to align park name and states and position over the image with opacity change*/
 .hero-banner__content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
-.hero-banner__subtitle {
+/* Added to have states be white and name on top of states */
+
+.hero-banner_subtitle {
   display: flex;
   flex-direction: column;
+  color: var(--bs-white);
+  padding: 10px;
+  
+}
+
+.hero-banner_title {
+  font-size: 2em;
+  padding: 15px;
 }
 
 /* Utility styles */
