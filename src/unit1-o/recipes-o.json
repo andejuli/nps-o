@@ -1,0 +1,19 @@
+{
+    "title": "Chocolate Chip Cookies",
+    "ingredients": [
+        {
+            "name": "butter",
+            "amount": "1 lb",
+            "processing": "softened"
+        },
+        {
+            "name": "brown sugar",
+            "amount": "1 1/2 cup"
+        },
+        {
+            "name": "white sugar",
+            "amount": "1 cup"
+        },
+        
+    ]
+}

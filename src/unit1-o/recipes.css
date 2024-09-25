@@ -1,0 +1,13 @@
+.recipe-container img{
+    width: 200px;
+}
+.recipe-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 500px) {
+    .recipe-container {
+        flex-direction: column;
+    }
+}

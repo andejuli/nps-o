@@ -1,27 +1,24 @@
+import { setHeaderInfo, setParkFooter } from "./setHeaderFooter.mjs";
 import { getParkData } from "./parkService.mjs";
+import { getParkInfoLinks } from "./parkService.mjs";
+import { introTemplate, mediaCardTemplate, footerTemplate} from "./templates.mjs";
 
 const parkData = getParkData();
+const parkInfoLinks = getParkInfoLinks();
 
-let disclaimer = document.querySelector(".disclaimer a");
+function setParkIntro(data) {
+    const introContainer = document.querySelector(".intro");
+    introContainer.innerHTML = introTemplate(data);
+}
 
-disclaimer.innerHTML = parkData.fullName;
-disclaimer.href = parkData.url;
+function setParkInfo(data) {
+    console.log(data);
+    const container = document.querySelector('.info');
+    const html = data.map(mediaCardTemplate);
+    container.innerHTML = html.join('');
+}
 
-document.querySelector('title').innerHTML = parkData.fullName;
-
-let banner_img = document.querySelector(".hero-banner img");
-
-banner_img.src = parkData.images[0].url;
-banner_img.alt = parkData.images[0].altText;
-
-document.querySelector('.hero-banner_title').innerHTML = parkData.name;
-document.querySelector('#park_des').innerHTML = parkData.designation;
-document.querySelector('#states').innerHTMl = parkData.states;
-
-
-
-
-
-
-
-  
+setHeaderInfo(parkData);
+setParkIntro(parkData);
+setParkInfo(parkInfoLinks);
+setParkFooter(parkData);

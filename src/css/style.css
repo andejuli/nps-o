@@ -102,7 +102,7 @@ body {
 }
 
 #container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -288,4 +288,46 @@ svg {
 svg {
   background-color: var(--bs-black);
   fill: white;
+}
+
+/* intro */
+.intro {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+/* media cards */
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+.info div {
+  width: 30%;
+}
+
+.info img {
+  width: 100%;
+}
+
+/* footer */
+#park-footer {
+  background-image: url("../images/topo_pattern.png");
+}
+
+.contact {
+  padding: 25px;
+}
+
+@media screen and (max-width: 600px){
+  .info div {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .info{
+      flex-direction: column;
+  }
 }
