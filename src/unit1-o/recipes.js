@@ -8,12 +8,11 @@ function setCookieInfo(data) {
     console.log(data);
     const container = document.querySelector('.recipe-container');
     //multiple recipes so we loop through them with map
-    const html = data.recipes.map(recipeTemplate);
+    const html = data.map(recipeTemplate);
     container.innerHTML = html.join("");
 }
 function recipeTemplate(info) {
-    return `
-    <div class="recipe">
+    return `<div class="recipe">
       <h2>${info.recipe_name}</h2>
       <img src="${info.image}" alt="${info.notes}">
     </div>`;

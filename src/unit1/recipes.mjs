@@ -1,6 +1,4 @@
 const cookies = 
-{
-"recipes":
     [
     {
         "recipe_name": "Chocolate Chip Cookies",
@@ -169,7 +167,7 @@ const cookies =
         ]
     }  
     ]
-}
+
 
 export function getRecipes() {
     return cookies;
