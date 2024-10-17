@@ -8,6 +8,7 @@ import { visitorsTemplate} from "./templates.mjs";
 import { activitiesTemplate} from "./templates.mjs";
 
 
+
 export function setAlerts(data) {
     console.log(data);
     const alertElem = document.querySelector(".alerts ul");
@@ -35,6 +36,7 @@ export function setActivities(data) {
 
 async function init() {
     const parkData = await getParkData(); //get original data like NPS 3
+
     const alerts = await getAlerts(parkData.parkCode); //get new data using parkCode property
     const visitors = await getVisitors(parkData.parkCode);
     console.log(visitors);
