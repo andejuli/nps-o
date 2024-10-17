@@ -215,3 +215,21 @@ const withUpdatedImages = parkInfoLinks.map((item, index) => {
 });
 return withUpdatedImages;
 }
+//NPS 4
+export async function getAlerts(code) {
+  const parkData = await getJson(`alerts?parkCode=${code}`); //new endpoint
+  return parkData.data;
+}
+
+export async function getVisitors(code) {
+  const parkData = await getJson(`visitorcenters?parkCode=${code}`); //new endpoint
+  return parkData.data;
+}
+
+export async function getActivities(code) {
+  const parkData = await getJson(`activities?parkCode=${code}`); //new endpoint
+  return parkData.data;
+}
+
+
+

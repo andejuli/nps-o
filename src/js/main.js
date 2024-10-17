@@ -31,3 +31,14 @@ async function init() {
 
 init();
 
+// Navigation
+
+function menuclick() {
+  //close the right menu item
+  let globalNav = document.querySelector('.global-nav');
+  console.log(globalNav);
+  globalNav.classList.toggle('show');
+}
+let menuButton = document.querySelector('#global-nav-toggle');
+
+menuButton.addEventListener('click', menuclick)
