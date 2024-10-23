@@ -174,8 +174,9 @@ a:hover {
 
 /* Added to align top global header */
 .global-header {
-  display: grid;  /*had to change with NPS 5 if was flexbox */
+  display: grid;  /*had to change with NPS 5 it was flexbox */
   grid-template-columns: 300px auto 150px;
+  
 }
 .global-header h1 {
   font-size: 1.2em;
@@ -246,8 +247,6 @@ svg {
 .hero-banner {
   position: relative;
 }
-
-
 
 /* Added to align park name and states and position over the image with opacity change*/
 .hero-banner__content {
@@ -369,39 +368,145 @@ svg {
   padding: 25px;
 }
 
-/* menu */
+/* Global nav styles */
 
 .global-nav {
+  width: 100%;
+  grid-column: 1/4;
+  border-top: 1px solid #333;
   max-height: 0;
-  grid-column: 1/2;
-  grid-row: 2/3;
-  justify-self: start;
+  overflow: hidden;
+  transition: all 0.5s;
 }
-.global-nav button {
-  cursor: pointer;
-}
-.show {
-  max-height: 115px;
-}
-
 .global-header__right {
   grid-column: 3/4;
   grid-row: 1/2;
 }
+
+.global-nav button {
+  background-color: transparent;
+  border: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
 .global-nav_toggle-open {
   display: none;
 }
+.global-nav svg {
+  --icon-color: white;
+}
 .global-nav__section-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1rem 0.625rem;
+  font-size: 1.25rem;
   color: white;
-  padding-left: 10px;
+}
+.section-heading--green {
+  color: var(--bs-light-green);
+}
+.section-heading--blue {
+  color: var(--bs-chathams-blue-3);
 }
 
-@media screen and (max-width: 600px){
-  .info div {
-    width: 70%;
-    margin: 0 auto;
+.global-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #444;
+}
+.global-nav__split-button {
+  display: flex;
+  background-color: var(--bs-gray-800);
+}
+.global-nav__split-button > a {
+  flex: 1;
+  align-self: center;
+  padding: 1rem 0.625rem;
+  display: block;
+}
+.global-nav__split-button > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  border-left: 1px solid #444;
+}
+
+.global-nav__split-button > button:hover,
+.global-nav__split-button > a:hover {
+  background-color: var(--bs-gray-900);
+}
+
+.global-nav__submenu {
+  list-style: none;
+  padding: 0;
+  font-size: 0.8em;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s;
+}
+
+.global-nav__submenu a {
+  display: block;
+  padding: 1rem 0.625rem;
+}
+.global-nav__submenu a:hover {
+  text-decoration: underline;
+}
+
+/* Adjust for wide screens */
+
+@media (min-width: 768px) {
+  .global-nav > h2,
+  .global-nav__list:first-of-type {
+    display: none;
   }
-  .info{
-      flex-direction: column;
+  .global-nav__submenu,
+  .global-nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
+  .global-nav__split-button {
+    background-color: inherit;
+  }
+  .global-nav__split-button > button {
+    display: none;
+  }
+  .global-nav__submenu {
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+  }
+  .global-nav__submenu a {
+    padding: 0.625rem;
+  }
+}
+
+/* styles to control opening and closing of menus */
+
+/* .global-nav__toggle--closed {
+  display: flex;
+  align-items: center;
+}
+.global-nav__toggle--open {
+  display: none;
+  align-items: center;
+} */
+
+/* .global-nav__toggle[aria-expanded="true"] .global-nav__toggle--closed {
+  display: none;
+}
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--open {
+  display: flex;
+} */
+
+.global-nav__split-button .icon {
+  transition: all 0.3s;
+}
+
+.global-nav.show,
+.global-nav__submenu.show {
+  max-height: 1000px;
 }

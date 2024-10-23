@@ -1,4 +1,5 @@
 import { footerTemplate } from "./templates.mjs";
+import enableNavigation from "./navigation.mjs";
 
 export function setHeaderInfo(parkData) {
     let disclaimer = document.querySelector(".disclaimer a");
@@ -16,9 +17,14 @@ export function setHeaderInfo(parkData) {
     document.querySelector('.hero-banner_title').innerHTML = parkData.name;
     document.querySelector('#park_des').innerHTML = parkData.designation;
     document.querySelector('.states').innerHTMl = parkData.states;
+
+    
 }
 
 export function setParkFooter(data) {
     const footerContainer = document.querySelector("#park-footer");
     footerContainer.innerHTML = footerTemplate(data);
 }
+
+
+enableNavigation();
