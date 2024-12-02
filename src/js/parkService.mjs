@@ -231,5 +231,10 @@ export async function getActivities(code) {
   return parkData.data;
 }
 
+//NPS 7
 
-
+export async function getParkVisitorCenterDetails(id) {
+  const parkData = await getJson(`visitorcenters?id=${id}`);
+  console.log(parkData.data[0]);
+  return parkData.data[0];
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beach Animation</title>
+    <style>
+      #content {
+        display: grid;
+        grid-template-columns: 1300px;
+        justify-content: center;
+      }
+      #beach {
+        width: 100%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin: 0 auto;
+      }
+      #ball,
+      #crab {
+        width: 80px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      #ball {
+        margin: 480px auto;
+        z-index: 1;
+      }
+      #crab {
+        margin-top: 550px;
+      }
+      .disable-scroll {
+        overflow-y: hidden;
+      }
+    </style>
+  </head>
+  <body class="disable-scroll">
+    <div id="content">
+      <img id="beach" src="images/beach.jpg" alt="beach landscape" />
+      <img id="crab" src="images/crab.png" alt="crab" />
+      <img id="ball" src="images/ball.png" alt="beach ball" />
+    </div>
+    <script>
+      const ball = document.querySelector("#ball");
+      const crab = document.querySelector("#crab");
+      window.addEventListener('load', (event)=> {
+        const animate_crab = crab
+        .animate(
+          [
+            {
+              transform: "translateX(0)",
+            },
+            {
+              transform: "translateX(610px)",
+            },
+          ],
+          {
+            fill: "both",
+            duration: 1800,
+          }
+        )
+        .finished.then(() => {
+          const animate_ball_intro = ball.animate(
+            [
+              {
+                transform: "rotateZ(0)",
+              },
+              {
+                transform: "rotateZ(-360deg)",
+              },
+            ],
+            {
+              fill: "both",
+              duration: 600,
+            }
+          );
+        });
+      })
+      
+      function crazyThrow() {
+        ball.animate(
+          [
+            { transform: 'translate(0, 0) rotate(0deg) scale(1)' },          // Initial position and rotation
+            { transform: 'translate(100px, 0) rotate(180deg)' },    // Move right and rotate
+            { transform: 'translate(100px, 100px) rotate(360deg) scale(2)' },// Move down and rotate start getting bigger
+            { transform: 'translate(-200px, 100px) rotate(540deg)' },// Move left and rotate
+            { transform: 'translate(-200px, -200px) rotate(720deg) scale(3)' },// Move up and rotate and biggest
+            { transform: 'translate(300px, -200px) rotate(900deg)' },// Move right and rotate
+            { transform: 'translate(300px, 300px) rotate(1080deg) scale(2)' },// Move down and rotate start getting smaller
+            { transform: 'translate(-400px, 300px) rotate(1260deg)' },// Move left and rotate
+            { transform: 'translate(-400px, -400px) rotate(1440deg) scale(1)' },// Move up and rotate
+          ],
+          {
+            duration: 1500,
+            iterations: 2,
+            direction: "alternate",
+            easing: "ease-in-out",
+          }
+        )
+      }
+
+      // The code below can be edited
+
+      function startAnimation() {
+        ball.animate(
+          [
+            {
+              transform: "translateY(0) rotate(0deg)"
+            },
+            {
+              transform: "translateY(-400%) rotate(180deg)"
+            },
+          ],
+          {
+            duration: 1000,
+            iterations: 2,
+            direction: "alternate",
+            easing: "ease-in-out",
+          }
+        );
+      }
+      ball.addEventListener("click", startAnimation);
+      
+    </script>
+  </body>
+</html>
