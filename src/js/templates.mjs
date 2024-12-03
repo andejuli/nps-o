@@ -127,8 +127,6 @@ export function iconTemplate(iconId) {
             <use
               href="${spritePath}#${iconId}"
             ></use>
-            
-
           </svg>`;
 }
 
