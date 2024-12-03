@@ -7,7 +7,6 @@ import {
     vcDetailsTemplate,
     vcImageTemplate,
     listTemplate,
-    iconTemplate,
     vcAddressesListTemplate,
     vcDirectionsTemplate,
     vcContactsTemplate
