@@ -27,6 +27,7 @@ function buildPage(data) {
     detailsEl.innerHTML = "";
     // addresses section
     const addressHTML = vcAddressesListTemplate(data.addresses);
+    console.log(data.addresses);
     detailsEl.insertAdjacentHTML(
       "beforeend",
       vcDetailsTemplate(

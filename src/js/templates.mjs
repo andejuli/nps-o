@@ -74,6 +74,7 @@ export function vcTitleTemplate(text) {
 
 export function vcInfoTemplate(data) {
   const image = data.images[0];
+  console.log(image);
   return `<figure>
           <img src="${image.url}" alt="${image.altText}" />
           <figcaption>${image.caption} <span>${image.credit}</span></figcaption>
@@ -96,6 +97,7 @@ function vcAddressTemplate(data) {
 }
 
 export function vcAddressesListTemplate(data) {
+  console.log(data);
   const physical = data.find((address) => address.type === "Physical");
   const mailing = data.find((address) => address.type === "Mailing");
   let html = vcAddressTemplate(physical);
